@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    
+    <style>
+        body {
+          background: #c3c5c7;
+          /* font-family: 'Times New Roman', Times, serif; */
+          height: 1500px;
+        }
+        
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 140px;
+          background: rgba(0, 0, 0, .8);
+          -webkit-transition: height 0.3s;
+          -moz-transition: height 0.3s;
+          transition: height 0.3s;
+        }
+        
+        .header .wrap {
+          margin: 0 auto;
+          width: 90%;
+          max-width: 69em;
+        }
+        
+        .header h1,
+        .header .menu {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .header h1,
+        .header .menu a {
+             line-height: 140px; 
+             color: #808080; /* 親要素（.menu）のカラーを継承する */
+                    text-decoration: none; /* リンクの下線を削除する */
+                    
+        }
+        
+        .header .menu a:hover {
+            color: #ff0000; /* カーソルが当たった時の文字色を指定（ここでは赤色に指定） */
+            transition: color 0.3s ease; /* カーソルが当たった時の色変化にアニメーションを追加（オプション） */
+        }
+        
+        
+        .header h1 {
+          float: left;
+          margin: 0;
+          color: #ffffff;
+          font-size: 72px;
+          text-transform: uppercase;
+        }
+        
+        .header h1 a {
+            color: inherit; /* 親要素（.header h1）のカラーを継承する */
+            text-decoration: none; /* リンクの下線を削除する */
+        }
+        
+        .header .menu {
+          float: right;
+          
+          a {
+            margin: 0 10px;
+            color: white;
+         
+            &:last-of-type { margin-right: 0; }
+          }
+        }
+        
+        
+        /* Shrinking */
+        .header h1,
+        .header nav a {
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+         
+        .header.shrink { height: 90px; }
+         
+        .header.shrink h1,
+        .header.shrink nav a { line-height: 90px; }
+         
+        .header.shrink h1 { font-size: 2em; }
+        
+        .lead{  
+            margin-bottom: 100px;
+            margin-top: 200px; /* ヘッダーとの間隔を調整 */    
+            font-size: 50px;
+            text-align: left; /* テキストを中央寄せに配置 */
+            margin-left: 150px; /* 左側の余白を設定（任意の値） */
+            margin-right: 30px; /* 右側の余白を設定（任意の値） */
+        }
+        
+        .sm{
+            font-size: 15px;
+            color: red;
+        }
+        
+        .float-right {
+            float: right;
+            margin-left: 20px; /* 画像間の間隔を設定（任意の値） */
+        }
+        
+        .image-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* .lead_color{
+            color: red;
+        
+            font-size: 24px;  例として文字サイズを24ピクセルに設定 
+            font-weight: bold;  フォントを太字にする場合（任意） 
+             他のスタイルプロパティを追加できます 
+            text-align: center;  テキストを左寄せに配置 
+        } */
+        
+        .kaisya_syoukai{
+            font-size: 40px; /* 文字サイズを18ピクセルに設定 */
+            color: #808080; /* テキストの色を青色に設定 */
+            background-color: #f8f9fa; /* 背景色を灰色に設定 */
+            padding: 10px; /* 内部余白を10ピクセルに設定 */
+            margin: 5px; /* 外部余白を5ピクセルに設定 */
+            border: 1px solid #ced4da; /* 1ピクセルの灰色の実線の枠線を設定 */
+            border-radius: 5px; /* 角を5ピクセルの半径で丸める */
+            text-align: center; /* テキストを中央寄せに配置 */
+        }
+
+        .senntaku{
+            letter-spacing: 5px;
+        }
+        </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="wrap">                     
+            <h1><a href="index.html">JOJO</a></h1>
+            <div class="senntaku">
+                <nav class="menu">
+                    <a class='navbar-brand' href="index.html">HOME</a>
+                    <a class='navbar-brand' href="about.html">ABOUT</a>
+                    <a class='navbar-brand' href="news.html">NEWS</a>
+                    <a class='navbar-brand' href="anime.html">ANIME</a>
+                    <a class='navbar-brand' href="comics.html">COMICS</a>
+                    <a class='navbar-brand' href="goods.html">GOODS</a>
+                    <a class='navbar-brand' href="special.html">SPECIAL</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div style="margin-top: 160px; text-align: center;">
+        <img src="about_image.jpg" alt="About JoJo's Image" width="1820" height="980">
+    </div>
+
+    <div class="kaisya_syoukai">
+        <h2>ジョジョの奇妙な冒険について</h2>
+        <p>「ジョジョの奇妙な冒険」は荒木飛呂彦による漫画で、1980年代から連載されています。壮大なストーリーとユニークなキャラクターで世界中のファンを魅了しています。</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 150) {
+                    $('header').addClass('shrink');
+                } else {
+                    $('header').removeClass('shrink');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
